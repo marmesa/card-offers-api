@@ -1,5 +1,5 @@
-from schemas.comentario import ComentarioSchema
-from schemas.produto import ProdutoSchema, ProdutoBuscaSchema, ProdutoViewSchema, \
-                            ListagemProdutosSchema, ProdutoDelSchema, apresenta_produtos, \
-                            apresenta_produto, apresenta_produtos
+from schemas.card import CardSchema
+from schemas.client import ClientSchema, ClientSearchSchema, ClientViewSchema, \
+                            ListClientsSchema, ClientDelSchema, show_clients, \
+                            show_client, show_clients
 from schemas.error import ErrorSchema

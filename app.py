@@ -4,7 +4,7 @@ from urllib.parse import unquote
 
 from sqlalchemy.exc import IntegrityError
 
-from model import Session, Produto, Comentario
+from model import Session, Client, Card
 from logger import logger
 from schemas import *
 from flask_cors import CORS
@@ -15,9 +15,8 @@ CORS(app)
 
 # definindo tags
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
-produto_tag = Tag(name="Produto", description="Adição, visualização e remoção de produtos à base")
-comentario_tag = Tag(name="Comentario", description="Adição de um comentário à um produtos cadastrado na base")
-
+client_tag = Tag(name="Client", description="Adição, visualização e remoção de clientes à base")
+card_tag = Tag(name="Card", description="Adição de um cartão à um cliente cadastrado na base")
 
 @app.get('/', tags=[home_tag])
 def home():
@@ -26,145 +25,153 @@ def home():
     return redirect('/openapi')
 
 
-@app.post('/produto', tags=[produto_tag],
-          responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
-def add_produto(form: ProdutoSchema):
-    """Adiciona um novo Produto à base de dados
+@app.post('/client', tags=[client_tag],
+          responses={"200": ClientViewSchema, "409": ErrorSchema, "400": ErrorSchema})
+def add_client(form: ClientSchema):
+    """Adiciona um novo Cliente à base de dados
 
-    Retorna uma representação dos produtos e comentários associados.
+    Retorna uma representação dos clients e cartões associados.
     """
-    produto = Produto(
-        nome=form.nome,
-        quantidade=form.quantidade,
-        valor=form.valor)
-    logger.debug(f"Adicionando produto de nome: '{produto.nome}'")
+    client = Client(
+        name=form.name,
+        income=form.income,
+        benefitClient=form.benefitClient)
+    
+    logger.info("adicionando Maria")
+    logger.debug(f"Adicionando cliente de nome: '{client.name}'")
     try:
         # criando conexão com a base
         session = Session()
-        # adicionando produto
-        session.add(produto)
+        logger.info("sessão criada")
+        # adicionando client
+        session.add(client)
+        logger.info(f"sessão add {client.income} ")
         # efetivando o camando de adição de novo item na tabela
         session.commit()
-        logger.debug(f"Adicionado produto de nome: '{produto.nome}'")
-        return apresenta_produto(produto), 200
+        logger.info("sessão commit")
+        logger.debug(f"Adicionado cliente de nome: '{client.name}'")
+        return show_client(client), 200
 
     except IntegrityError as e:
         # como a duplicidade do nome é a provável razão do IntegrityError
-        error_msg = "Produto de mesmo nome já salvo na base :/"
-        logger.warning(f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
-        return {"mesage": error_msg}, 409
+        error_msg = "Cliente de mesmo nome já salvo na base :/"
+        logger.warning(f"Erro ao adicionar cliente '{client.name}', {error_msg}")
+        return {"message": error_msg}, 409
 
     except Exception as e:
         # caso um erro fora do previsto
-        error_msg = "Não foi possível salvar novo item :/"
-        logger.warning(f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
-        return {"mesage": error_msg}, 400
+        error_msg = "Não foi possível salvar novo cadastro :/"
+        logger.warning(f"Erro ao adicionar cliente '{client.name}', {error_msg}")
+        return {"message": error_msg}, 400
 
 
-@app.get('/produtos', tags=[produto_tag],
-         responses={"200": ListagemProdutosSchema, "404": ErrorSchema})
-def get_produtos():
-    """Faz a busca por todos os Produto cadastrados
+@app.get('/clients', tags=[client_tag],
+         responses={"200": ListClientsSchema, "404": ErrorSchema})
+def get_clients():
+    """Faz a busca por todos os Clientes cadastrados
 
-    Retorna uma representação da listagem de produtos.
+    Retorna uma representação da listagem de clientes.
     """
-    logger.debug(f"Coletando produtos ")
+    logger.debug(f"Coletando clientes ")
     # criando conexão com a base
     session = Session()
     # fazendo a busca
-    produtos = session.query(Produto).all()
+    clients = session.query(Client).all()
 
-    if not produtos:
-        # se não há produtos cadastrados
-        return {"produtos": []}, 200
+    if not clients:
+        # se não há clientes cadastrados
+        return {"clients": []}, 200
     else:
-        logger.debug(f"%d rodutos econtrados" % len(produtos))
-        # retorna a representação de produto
-        print(produtos)
-        return apresenta_produtos(produtos), 200
+        logger.debug(f"%d clientes encontrados" % len(clients))
+        # retorna a representação de cliente
+        print(clients)
+        return show_clients(clients), 200
 
 
-@app.get('/produto', tags=[produto_tag],
-         responses={"200": ProdutoViewSchema, "404": ErrorSchema})
-def get_produto(query: ProdutoBuscaSchema):
-    """Faz a busca por um Produto a partir do id do produto
+@app.get('/client', tags=[client_tag],
+         responses={"200": ClientViewSchema, "404": ErrorSchema})
+def get_client(query: ClientSearchSchema):
+    """Faz a busca por um Cliente a partir do nome do cliente
 
-    Retorna uma representação dos produtos e comentários associados.
+    Retorna uma representação dos clientes e cartões associados.
     """
-    produto_nome = query.nome
-    logger.debug(f"Coletando dados sobre produto #{produto_nome}")
+    client_name = query.name
+    logger.debug(f"Coletando dados sobre cliente #{client_name}")
     # criando conexão com a base
     session = Session()
     # fazendo a busca
-    produto = session.query(Produto).filter(Produto.nome == produto_nome).first()
+    client = session.query(Client).filter(Client.name == client_name).first()
 
-    if not produto:
-        # se o produto não foi encontrado
-        error_msg = "Produto não encontrado na base :/"
-        logger.warning(f"Erro ao buscar produto '{produto_nome}', {error_msg}")
-        return {"mesage": error_msg}, 404
+    if not client:
+        # se o cliente não foi encontrado
+        error_msg = "Cliente não encontrado na base :/"
+        logger.warning(f"Erro ao buscar client '{client_name}', {error_msg}")
+        return {"message": error_msg}, 404
     else:
-        logger.debug(f"Produto econtrado: '{produto.nome}'")
-        # retorna a representação de produto
-        return apresenta_produto(produto), 200
+        logger.debug(f"Cliente econtrado: '{client.name}'")
+        # retorna a representação de client
+        return show_client(client), 200
 
 
-@app.delete('/produto', tags=[produto_tag],
-            responses={"200": ProdutoDelSchema, "404": ErrorSchema})
-def del_produto(query: ProdutoBuscaSchema):
-    """Deleta um Produto a partir do nome de produto informado
+@app.delete('/client', tags=[client_tag],
+            responses={"200": ClientDelSchema, "404": ErrorSchema})
+def del_client(query: ClientSearchSchema):
+    """Deleta um Cliente a partir do nome de client informado
 
     Retorna uma mensagem de confirmação da remoção.
     """
-    produto_nome = unquote(unquote(query.nome))
-    print(produto_nome)
-    logger.debug(f"Deletando dados sobre produto #{produto_nome}")
+    client_name = unquote(unquote(query.name))
+    print(client_name)
+    logger.debug(f"Deletando dados sobre client #{client_name}")
     # criando conexão com a base
     session = Session()
     # fazendo a remoção
-    count = session.query(Produto).filter(Produto.nome == produto_nome).delete()
+    count = session.query(Client).filter(Client.name == client_name).delete()
     session.commit()
 
     if count:
         # retorna a representação da mensagem de confirmação
-        logger.debug(f"Deletado produto #{produto_nome}")
-        return {"mesage": "Produto removido", "id": produto_nome}
+        logger.debug(f"Deletado client #{client_name}")
+        return {"message": "Client removido", "id": client_name}
     else:
-        # se o produto não foi encontrado
-        error_msg = "Produto não encontrado na base :/"
-        logger.warning(f"Erro ao deletar produto #'{produto_nome}', {error_msg}")
-        return {"mesage": error_msg}, 404
+        # se o client não foi encontrado
+        error_msg = "Client não encontrado na base :/"
+        logger.warning(f"Erro ao deletar client #'{client_name}', {error_msg}")
+        return {"message": error_msg}, 404
 
 
-@app.post('/cometario', tags=[comentario_tag],
-          responses={"200": ProdutoViewSchema, "404": ErrorSchema})
-def add_comentario(form: ComentarioSchema):
-    """Adiciona de um novo comentário à um produtos cadastrado na base identificado pelo id
+@app.post('/card', tags=[card_tag],
+          responses={"200": ClientViewSchema, "404": ErrorSchema})
+def add_card(form: CardSchema):
+    """Adiciona de um novo cartão à um clients cadastrado na base identificado pelo id
 
-    Retorna uma representação dos produtos e comentários associados.
+    Retorna uma representação dos clients e cartões associados.
     """
-    produto_id  = form.produto_id
-    logger.debug(f"Adicionando comentários ao produto #{produto_id}")
+    client_id  = form.client_id
+    logger.debug(f"Adicionando cartões ao client #{client_id}")
     # criando conexão com a base
     session = Session()
-    # fazendo a busca pelo produto
-    produto = session.query(Produto).filter(Produto.id == produto_id).first()
+    # fazendo a busca pelo client
+    client = session.query(Client).filter(Client.id == client_id).first()
 
-    if not produto:
-        # se produto não encontrado
-        error_msg = "Produto não encontrado na base :/"
-        logger.warning(f"Erro ao adicionar comentário ao produto '{produto_id}', {error_msg}")
-        return {"mesage": error_msg}, 404
+    if not client:
+        # se client não encontrado
+        error_msg = "Client não encontrado na base :/"
+        logger.warning(f"Erro ao adicionar cartão ao cliente '{client_id}', {error_msg}")
+        return {"message": error_msg}, 404
 
-    # criando o comentário
-    texto = form.texto
-    comentario = Comentario(texto)
+    # criando o cartão
 
-    # adicionando o comentário ao produto
-    produto.adiciona_comentario(comentario)
+    name = form.name
+    limit = form.limit
+    benefitCard = form.benefitCard
+    card = Card(name, limit, benefitCard)
+
+    # adicionando o cartão ao client
+    client.add_card(card)
+    logger.info(f"nao Adicionado cartão ao cliente #{client_id}")
     session.commit()
+    logger.info(f"sim Adicionado cartão ao cliente #{client_id}")
 
-    logger.debug(f"Adicionado comentário ao produto #{produto_id}")
-
-    # retorna a representação de produto
-    return apresenta_produto(produto), 200
+    # retorna a representação de client
+    return show_client(client), 200

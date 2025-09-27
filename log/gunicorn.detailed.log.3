@@ -1,0 +1,153 @@
+[2025-09-27 18:19:49,485] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:21:50,389] INFO _log() L97    * Detected change in 'D:\\MVPs\\card-offers-api\\model\\card.py', reloading - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:21:50,504] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:21:53,993] INFO add_card() L172  nao Adicionado cartão ao cliente #1 - call_trace=D:\MVPs\card-offers-api\app.py L172 
+[2025-09-27 18:21:53,995] ERROR log_exception() L875  Exception on /card [POST] - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\flask\app.py L875 
+Traceback (most recent call last):
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: card.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\flask_openapi3\scaffold.py", line 123, in view_func
+    response = func(**func_kwargs)
+  File "D:\MVPs\card-offers-api\app.py", line 173, in add_card
+    session.commit()
+    ~~~~~~~~~~~~~~^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\MVPs\card-offers-api\meu-env\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: card.name
+[SQL: INSERT INTO card (name, "limit", "benefitCard", inserction_date, client) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Cartao Preto', 1000.0, 'Anuidade Zero', '2025-09-27 18:21:51.410142', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-09-27 18:21:54,008] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:21:54] "[35m[1mPOST /card HTTP/1.1[0m" 500 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:22:55,849] INFO _log() L97    * Detected change in 'D:\\MVPs\\card-offers-api\\model\\card.py', reloading - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:22:55,952] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:23:07,770] INFO add_card() L172  nao Adicionado cartão ao cliente #1 - call_trace=D:\MVPs\card-offers-api\app.py L172 
+[2025-09-27 18:23:07,800] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:23:07] "[35m[1mPOST /card HTTP/1.1[0m" 500 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:23:45,156] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:23:45] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:23:45,337] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:23:45] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:23:45,338] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:23:45] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:23:45,339] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:23:45] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 18:23:47,804] INFO add_card() L172  nao Adicionado cartão ao cliente #1 - call_trace=D:\MVPs\card-offers-api\app.py L172 

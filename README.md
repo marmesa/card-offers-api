@@ -10,9 +10,24 @@ O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das três aulas da 
 ---
 ## Como executar 
 
-
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
 Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
+
+Primeiramente é necessário instalar o python e em seguida criar o seu ambiente virtual executando:
+
+```
+python3 -m venv meu-env 
+```
+ou
+``` 
+python -m venv meu-env
+```
+
+Estando na pasta do seu projeto deve-se ser executado o script do seu ambiente criado executando:
+
+```
+.\meu-env\Scripts\activate
+```
 
 > É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
 
