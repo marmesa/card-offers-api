@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, DateTime, Float
+from sqlalchemy import Column, ForeignKey, String, Integer, DateTime, Float
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from typing import Union
@@ -15,15 +15,11 @@ class card(Base):
     secondBenefit = Column(String(140))
     data_insercao = Column(DateTime, default=datetime.now())
 
-    # Definição do relacionamento entre o card e um client.
-    # Aqui está sendo definido a coluna 'client' que vai guardar
-    # a referencia ao client, a chave estrangeira que relaciona
-    # um produto ao comentário.
+    # Definition of the relationship between the card and a client.
+    # This defines the 'client' column, which will store
+    # the reference to the client, the foreign key that links
+    # a product to the comment.
     client = Column(Integer, ForeignKey("client.pk_client"), nullable=False)
-
-    # Implicit relationship between cliente and card, SQLAlchemy
-    # have the responsability of rebuilding this relationship
-    benefit = relationship("benefit")
 
     def __init__(self, name:str, firstBenefit:str, secondBenefit:str,
                  data_insercao:Union[DateTime, None] = None):
