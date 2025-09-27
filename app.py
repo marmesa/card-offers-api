@@ -9,6 +9,8 @@ from logger import logger
 from schemas import *
 from flask_cors import CORS
 
+from schemas.card import ListCardsSchema, show_cards
+
 info = Info(title="Minha API", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
@@ -175,3 +177,26 @@ def add_card(form: CardSchema):
 
     # retorna a representação de client
     return show_client(client), 200
+
+@app.get('/cards', tags=[card_tag],
+         responses={"200": ListCardsSchema, "404": ErrorSchema})
+def get_cards():
+    """Faz a busca por todos os cartões cadastrados
+
+    Retorna uma representação da listagem de cartões.
+    """
+    logger.debug(f"Coletando cartões ")
+    # criando conexão com a base
+    session = Session()
+    # fazendo a busca
+    cards = session.query(Card).all()
+
+    if not cards:
+        # se não há clientes cadastrados
+        return {"cards": []}, 200
+    else:
+        logger.debug(f"%d clientes encontrados" % len(cards))
+        # retorna a representação de cliente
+        print(cards)
+        return show_cards(cards), 200
+    

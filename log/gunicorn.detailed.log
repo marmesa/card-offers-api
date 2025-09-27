@@ -1,20 +1,35 @@
-[2025-09-27 18:24:54,306] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:00,713] INFO _log() L97    * Detected change in 'D:\\MVPs\\card-offers-api\\model\\client.py', reloading - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:00,811] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:14,233] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+[2025-09-27 20:43:59,443] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.0.50:5000 - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:14,234] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:14,236] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:20,597] INFO add_client() L40   adicionando Maria - call_trace=D:\MVPs\card-offers-api\app.py L40  
-[2025-09-27 18:25:20,597] INFO add_client() L45   sessão criada - call_trace=D:\MVPs\card-offers-api\app.py L45  
-[2025-09-27 18:25:20,598] INFO add_client() L48   sessão add 1000.0  - call_trace=D:\MVPs\card-offers-api\app.py L48  
-[2025-09-27 18:25:20,644] INFO add_client() L51   sessão commit - call_trace=D:\MVPs\card-offers-api\app.py L51  
-[2025-09-27 18:25:20,649] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:25:20] "POST /client HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:30,234] INFO add_card() L172  nao Adicionado cartão ao cliente #1 - call_trace=D:\MVPs\card-offers-api\app.py L172 
-[2025-09-27 18:25:30,276] INFO add_card() L174  sim Adicionado cartão ao cliente #1 - call_trace=D:\MVPs\card-offers-api\app.py L174 
-[2025-09-27 18:25:30,278] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:25:30] "POST /card HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-27 18:25:40,317] INFO add_card() L172  nao Adicionado cartão ao cliente #1 - call_trace=D:\MVPs\card-offers-api\app.py L172 
-[2025-09-27 18:25:40,355] INFO add_card() L174  sim Adicionado cartão ao cliente #1 - call_trace=D:\MVPs\card-offers-api\app.py L174 
-[2025-09-27 18:25:40,356] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 18:25:40] "POST /card HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:43:59,445] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:43:59,447] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:44:01,722] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:44:01] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:45:10,592] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:45:10] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:45:10,593] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:45:10] "GET /cards HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:48:21,819] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:48:21] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:48:21,820] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:48:21] "GET /cards HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:48:26,215] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:48:26] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:48:26,219] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:48:26] "GET /cards HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:27,194] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.50:5000 - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:27,195] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:27,197] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:32,050] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:49:32] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:34,823] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:49:34] "GET /cards HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:34,823] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:49:34] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:35,383] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:49:35] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:35,385] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:49:35] "GET /cards HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:49:42,181] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:49:42] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:51:08,358] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:51:08] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:51:09,941] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:51:09] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:51:09,944] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:51:09] "GET /cards HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:51:21,963] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:51:21] "OPTIONS /client?name=Cartao%20Preto HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:51:21,976] WARNING del_client() L141  Erro ao deletar client #'Cartao Preto', Client não encontrado na base :/ - call_trace=D:\MVPs\card-offers-api\app.py L141 
+[2025-09-27 20:51:21,977] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:51:21] "[33mDELETE /client?name=Cartao%20Preto HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:51:24,961] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:51:24] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:51:24,964] INFO _log() L97   127.0.0.1 - - [27/Sep/2025 20:51:24] "GET /cards HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:54:24,547] INFO _log() L97    * Detected change in 'D:\\MVPs\\card-offers-api\\app.py', reloading - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-27 20:54:24,845] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  

@@ -36,6 +36,7 @@ def show_clients(clients: List[Client]):
             "name": client.name,
             "income": client.income,
             "benefitClient": client.benefitClient,
+            "client_id": client.id
         })
 
     return {"clients": result}
