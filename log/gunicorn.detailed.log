@@ -1,25 +1,50 @@
-[2025-09-28 14:33:52,532] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:33:53,573] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:33:53] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:33:53,701] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:33:53] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:33:53,702] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:33:53] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:33:53,897] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:33:53] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:33:54,221] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:33:54] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:33:54,223] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:33:54] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:09,428] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+[2025-09-28 15:14:23,743] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.0.50:5000 - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:09,428] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:09,430] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:15,440] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:15] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:15,517] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:15] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:15,702] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:15] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:15,765] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:15] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:16,155] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:16] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:16,156] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:16] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:21,751] WARNING add_client() L47   Erro ao adicionar 'Maria': Cliente de mesmo nome já salvo na base. - call_trace=D:\MVPs\card-offers-api\app.py L47  
-[2025-09-28 14:55:21,752] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:21] "[31m[1mPOST /client HTTP/1.1[0m" 409 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:25,649] INFO add_client() L42   Cliente 'Mariaasdasds' adicionado com sucesso. - call_trace=D:\MVPs\card-offers-api\app.py L42  
-[2025-09-28 14:55:25,652] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:25] "POST /client HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
-[2025-09-28 14:55:31,637] INFO get_clients() L66   8 clientes encontrados. - call_trace=D:\MVPs\card-offers-api\app.py L66  
-[2025-09-28 14:55:31,638] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 14:55:31] "GET /clients HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:23,745] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:23,746] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:31,584] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:31] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:36,059] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:36] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:36,135] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:36] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:36,378] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:36] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:36,379] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:36] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:36,833] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:36] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:36,834] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:36] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:44,007] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:44] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:44,589] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:44] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:50,846] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:50] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:52,486] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:52] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:52,867] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:52] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:53,012] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:53] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:53,146] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:53] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:14:53,270] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:14:53] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:01,656] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.50:5000 - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:01,657] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:01,658] INFO _log() L97    * Restarting with stat - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:12,394] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:12] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:17,223] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:17] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:17,294] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:17] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:17,484] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:17] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:17,547] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:17] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:17,890] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:17] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:17,892] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:17] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:20,910] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:20] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:23,607] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:23] "GET /openapi/ HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:23,920] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:23] "GET /openapi/rapipdf/images/rapipdf.svg HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:23,944] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:23] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:23,953] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:23] "GET /openapi/scalar/images/scalar.svg HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:23,954] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:23] "GET /openapi/redoc/images/redoc.svg HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:23,956] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:23] "GET /openapi/rapidoc/images/rapidoc.svg HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:23,957] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:23] "GET /openapi/elements/images/elements.svg HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:29,948] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:29] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:30,213] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:30] "[33mGET / HTTP/1.1[0m" 404 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:33,396] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:33] "GET /openapi/ HTTP/1.1" 200 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:33,697] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:33] "[36mGET /openapi/elements/images/elements.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:33,714] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:33] "[36mGET /openapi/rapipdf/images/rapipdf.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:33,714] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:33] "[36mGET /openapi/rapidoc/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:33,717] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:33] "[36mGET /openapi/redoc/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-09-28 15:15:33,718] INFO _log() L97   127.0.0.1 - - [28/Sep/2025 15:15:33] "[36mGET /openapi/scalar/images/scalar.svg HTTP/1.1[0m" 304 - - call_trace=D:\MVPs\card-offers-api\meu-env\Lib\site-packages\werkzeug\_internal.py L97  
