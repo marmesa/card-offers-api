@@ -53,4 +53,4 @@ pip install -U flask-openapi3[swagger,redoc,rapidoc,rapipdf,scalar,elements]
 
 ## Aplicação
 
-Abra o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para verificar o status da API em execução.
+Abra o [http://localhost:5000/openapi/](http://localhost:5000/openapi/) no navegador para verificar o status da API em execução.
