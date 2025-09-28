@@ -1,53 +1,56 @@
-# card-offers-api
-Back-end da aplicação que apresentar o melhor cartão para as características do cliente
+# 💳 card-offers-api
 
-# Minha API
-
-Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
-
-O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das três aulas da disciplina.
+Este projeto é parte da entrega do curso de Desenvolvimento Full Stack Básico da pós-graduação da PUC-Rio.  
+Trata-se do back-end de uma aplicação voltada para o cadastro de clientes e cartões, com o objetivo futuro de recomendar o melhor cartão com base nas características do cliente.
 
 ---
-## Como executar 
 
-Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
-Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
+## 🚀 Como executar o projeto
 
-Primeiramente é necessário instalar o python e em seguida criar o seu ambiente virtual executando:
+### 1. Pré-requisitos
 
+- Python 3 instalado  
+- Ambiente virtual configurado (recomendado)  
+- Todas as bibliotecas listadas no `requirements.txt`
+
+### 2. Clonando o repositório
+
+```bash
+git clone <URL-do-repositório>
+cd card-offers-api
 ```
+
+### 3. Criando e ativando o ambiente virtual
+
+Criação
+
+python -m venv meu-env 
+ou 
 python3 -m venv meu-env 
-```
-ou
-``` 
-python -m venv meu-env
-```
 
-Estando na pasta do seu projeto deve-se ser executado o script do seu ambiente criado executando:
+Ativação 
 
-```
 .\meu-env\Scripts\activate
-```
 
-> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
+💡É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
 
-```
-(env)$ pip install -r requirements.txt
-```
+### 4. Instalando as dependências
 
-Este comando instala as dependências/bibliotecas, descritas no arquivo `requirements.txt`.
+pip install -r requirements.txt
 
-Para executar a API  basta executar:
+### 5. Executando a API
 
-```
-(env)$ flask run --host 0.0.0.0 --port 5000
-```
+flask run --host 0.0.0.0 --port 5000
 
-Em modo de desenvolvimento é recomendado executar utilizando o parâmetro reload, que reiniciará o servidor
-automaticamente após uma mudança no código fonte. 
+#### Modo de desenvolvimento (com reload automático)
 
-```
-(env)$ flask run --host 0.0.0.0 --port 5000 --reload
-```
+flask run --host 0.0.0.0 --port 5000 --reload
+
+## 🧩 Interface de documentação
+Caso a interface Swagger ou Redoc não esteja disponível, instale os componentes adicionais:
+
+pip install -U flask-openapi3[swagger,redoc,rapidoc,rapipdf,scalar,elements]
+
+## Aplicação
 
 Abra o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para verificar o status da API em execução.

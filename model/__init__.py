@@ -1,31 +1,31 @@
-from sqlalchemy_utils import database_exists, create_database
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 import os
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy_utils import database_exists, create_database
 
-# importando os elementos definidos no modelo
+# Importando os modelos
 from model.base import Base
 from model.client import Client
 from model.card import Card
 
-db_path = "database/"
-# Verifica se o diretorio não existe
-if not os.path.exists(db_path):
-   # então cria o diretorio
-   os.makedirs(db_path)
+# Caminho do banco de dados
+DB_DIR = "database"
+DB_FILE = "db.sqlite3"
+DB_PATH = os.path.join(DB_DIR, DB_FILE)
+DB_URL = f"sqlite:///{DB_PATH}"
 
-# url de acesso ao banco (essa é uma url de acesso ao sqlite local)
-db_url = 'sqlite:///%s/db.sqlite3' % db_path
+# Garante que o diretório do banco existe
+os.makedirs(DB_DIR, exist_ok=True)
 
-# cria a engine de conexão com o banco
-engine = create_engine(db_url, echo=False)
+# Cria a engine de conexão
+engine = create_engine(DB_URL, echo=False)
 
-# Instancia um criador de seção com o banco
-Session = sessionmaker(bind=engine)
-
-# cria o banco se ele não existir 
+# Cria o banco se necessário
 if not database_exists(engine.url):
-    create_database(engine.url) 
+    create_database(engine.url)
 
-# cria as tabelas do banco, caso não existam
+# Cria as tabelas se não existirem
 Base.metadata.create_all(engine)
+
+# Instancia o criador de sessão
+Session = sessionmaker(bind=engine)
