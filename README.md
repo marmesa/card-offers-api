@@ -1,7 +1,7 @@
 # 💳 card-offers-api
 
 Este projeto é parte da entrega do curso de Desenvolvimento Full Stack Básico da pós-graduação da PUC-Rio.  
-Trata-se do back-end de uma aplicação voltada para o cadastro de clientes e cartões, com o objetivo futuro de recomendar o melhor cartão com base nas características do cliente.
+Trata-se do back-end de uma aplicação voltada para o cadastro de clientes levando em conta qual beneficio eles esperam com um cartão de crédito e cadastro de cartões de crédito para esses clientes, com o objetivo futuro de recomendar o melhor cartão com base nas características do cliente.
 
 ---
 
