@@ -17,7 +17,7 @@ CORS(app)
 # Tags de documentação
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
 client_tag = Tag(name="Client", description="Rotas para adição, visualização e remoção de clientes à base")
-card_tag = Tag(name="Card", description="Rotas para adição e remoção de um cartão à um cliente cadastrado na base")
+card_tag = Tag(name="Card", description="Rotas para adição e visualização de um cartão à um cliente cadastrado na base")
 
 #@app.get('/', tags=[home_tag])
 #def home():
